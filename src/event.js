@@ -1,15 +1,24 @@
 class Event {
-  constructor(text, dateTime) {
+  constructor(text, date) {
     this.text = text;
-    this.dateTime = dateTime;
+    this.date = date;
+    console.log("I am here")
+    console.log(this.date)
   }
 
-  getText(){
-    return this.text;
+
+
+
+  elementToDisplay() {
+    let div = document.createElement('div');
+    div.innerText = `${this.text} at ${this.date}`
+    console.log(this.date)
+    return div;
   }
 
   getDateTime(){
-    return this.dateTime;
+    return Date.parse(this.date)
   }
+
 
 }

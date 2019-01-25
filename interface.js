@@ -1,15 +1,32 @@
-//var messages = document.getElementById("messages");
-
-var textbox = document.getElementById("textbox");
-var eventTime = document.getElementById("event-time");
-var button = document.getElementById("button");
-
-function add_event() {
-  let event = new Event(textbox.value, eventTime.value);
+window.addEventListener('load', () => {
+  
   let eventList = new EventList();
-  let newEvent = document.createElement("ul");
-  newEvent.innerText = `${event.text} \n ${event.time}`;
-  //eventList.addEvent(event);
+  
+  let button = document.getElementById('button');
 
-  textbox.value = "";
-}
+  button.addEventListener("click", () => {
+    console.log('here')
+    let text = document.getElementById("textbox").value
+    let date = document.getElementById("event-time").value
+    let event = new Event(text, date);
+    console.log(event)
+    eventList.addEvent(event);
+    console.log(event);
+
+    display();
+  
+  })
+
+
+  const display = () => {
+    let eventsDiv = document.getElementById('upcomingEvents');
+    events = eventList.elementToDisplay();
+    eventsDiv.innerHTML = '';
+    eventsDiv.appendChild(events);
+    console.log(events)
+  }
+
+  
+
+
+}) 

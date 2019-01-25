@@ -19,6 +19,7 @@ describe('Events list', function() {
         list.addEvent(event)
         expect(list.planner[0]).toEqual(event)
 
+
     })
 
 })

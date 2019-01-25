@@ -15,4 +15,6 @@ describe('Event Class', function(){
     expect(event1.dateTime).toEqual('07/08/2019, 14:30')
   })
 
+  it('returns ')
+
 })
